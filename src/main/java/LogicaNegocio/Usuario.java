@@ -2,6 +2,8 @@
 package LogicaNegocio;
 import java.util.ArrayList;
 
+import static java.lang.Thread.sleep;
+
 public class Usuario {
     private String UserId;
     private String contrasenia;
@@ -33,6 +35,11 @@ public class Usuario {
         String remitente = this.manejadorSolicitud.getSolicitud().getEmisorSolicitud();
         for (Solicitud s: this.ListaDeSolicitudes){
             if (s.getEmisorSolicitud().equals(remitente)){
+                try {
+                    sleep(200);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 return ManejadorSolicitud.respuesta.reenvio;
             }
         }
@@ -41,6 +48,7 @@ public class Usuario {
                 return ManejadorSolicitud.respuesta.amigos;
             }
         }
+        this.ListaDeSolicitudes.add(this.manejadorSolicitud.getSolicitud());
         return ManejadorSolicitud.respuesta.ok;
     }
 }
