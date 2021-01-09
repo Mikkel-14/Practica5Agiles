@@ -1,15 +1,15 @@
 package LogicaNegocio;
 
 public class Solicitud {
-    private String emisorSolicitud;
+    private Usuario emisorSolicitud;
     private boolean estado;
 
-    public Solicitud(String emisorSolicitud ,boolean estado){
+    public Solicitud(Usuario emisorSolicitud ,boolean estado){
         this.emisorSolicitud=emisorSolicitud;
         this.estado=estado;
     }
 
-    public String getEmisorSolicitud() {
+    public Usuario getEmisorSolicitud() {
         return emisorSolicitud;
     }
 

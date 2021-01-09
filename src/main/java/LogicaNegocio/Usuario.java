@@ -32,9 +32,9 @@ public class Usuario {
     }
 
     public ManejadorSolicitud.respuesta actualizar(){
-        String remitente = this.manejadorSolicitud.getSolicitud().getEmisorSolicitud();
+        String remitente = this.manejadorSolicitud.getSolicitud().getEmisorSolicitud().getUserId();
         for (Solicitud s: this.ListaDeSolicitudes){
-            if (s.getEmisorSolicitud().equals(remitente)){
+            if (s.getEmisorSolicitud().getUserId().equals(remitente)){
                 try {
                     sleep(200);
                 } catch (InterruptedException e) {
