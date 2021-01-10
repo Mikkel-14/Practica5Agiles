@@ -34,7 +34,8 @@ public class Usuario {
     public ManejadorSolicitud.respuesta actualizar(){
         String remitente = this.manejadorSolicitud.getSolicitud().getEmisorSolicitud().getUserId();
         for (Solicitud s: this.ListaDeSolicitudes){
-            if (s.getEmisorSolicitud().getUserId().equals(remitente)){
+            String emisor = s.getEmisorSolicitud().getUserId();
+            if (emisor.equals(remitente)){
                 try {
                     sleep(200);
                 } catch (InterruptedException e) {
