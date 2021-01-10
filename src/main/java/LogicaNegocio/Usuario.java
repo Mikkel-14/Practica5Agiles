@@ -51,4 +51,19 @@ public class Usuario {
         this.ListaDeSolicitudes.add(this.manejadorSolicitud.getSolicitud());
         return ManejadorSolicitud.respuesta.ok;
     }
+    public void addAmigo(Usuario nuevoAmigo){
+        this.ListaDeAmigos.add(nuevoAmigo);
+
+    }
+    public void eliminarSolicitud(Solicitud solicitudAEliminar){
+        this.ListaDeSolicitudes.remove(solicitudAEliminar);
+    }
+
+    public ArrayList<Solicitud> getListaDeSolicitudes() {
+        return ListaDeSolicitudes;
+    }
+
+    public boolean elminiarAmigo(Usuario aEliminar){
+        return this.ListaDeAmigos.remove(aEliminar);
+    }
 }

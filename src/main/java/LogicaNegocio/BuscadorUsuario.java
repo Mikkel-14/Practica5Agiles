@@ -13,9 +13,8 @@ public class BuscadorUsuario {
     }
     public  Usuario buscar(String id){
         if (this.validarId(id)){
-            Usuario resultado = this.conexion.query(id);
-            if (resultado != null){
-                return resultado;
+            if (this.conexion.query(id) != null){
+                return this.conexion.query(id);
             }
             else{
                 return null;
